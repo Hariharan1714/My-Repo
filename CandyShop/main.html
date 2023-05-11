@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Candy Shop Seller Dashboard</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<h1>Candy Shop Seller Dashboard</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Candy Name</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody id="candyTableBody">
+		</tbody>
+	</table>
+	<h2>Add a New Candy Item</h2>
+	<form id="addCandyForm">
+		<label for="candyName">Name:</label>
+		<input type="text" id="candyName" name="candyName"><br>
+		<label for="candyPrice">Price:</label>
+		<input type="number" id="candyPrice" name="candyPrice"><br>
+		<label for="candyQuantity">Quantity:</label>
+		<input type="number" id="candyQuantity" name="candyQuantity"><br>
+		<input type="button" value="Add Item" onclick="addCandyItem()">
+	</form>
+</body>
+</html>
