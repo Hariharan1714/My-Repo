@@ -3,10 +3,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-// Use body-parser middleware to parse incoming requests
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Define a route to show the form
 app.get('/add-product', (req, res) => {
   res.send(`
     <form action="/add-product" method="POST">
@@ -17,12 +15,14 @@ app.get('/add-product', (req, res) => {
   `);
 });
 
-// Define a route to handle form submission
 app.post('/add-product', (req, res) => {
   const { product, size } = req.body;
   console.log('Product:', product);
   console.log('Size:', size);
-  res.send('Product added successfully');
+  res.send(`
+    <p>Product Name: ${product}</p>
+    <p>Product Size: ${size}</p>
+  `);
 });
 
 app.listen(port, () => {
